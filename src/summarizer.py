@@ -28,11 +28,30 @@ class ArticleSummarizer:
             return None
 
         try:
-            # Tronquage si nécessaire (le modèle ne gère qu'un nombre limité de tokens)
+            # Tronquer le texte d'entrée si trop long
             input_text = text.strip()[:self.max_input_length]
 
-            summary = self.model(input_text, max_length=180, min_length=60, do_sample=False)[0]["summary_text"]
-            return summary.strip()
+            # Déterminer dynamiquement la longueur du résumé selon la taille du texte
+            word_count = len(input_text.split())
+
+            if word_count > 1500:
+                min_len, max_len = 350, 500
+            elif word_count > 1000:
+                min_len, max_len = 250, 400
+            elif word_count > 600:
+                min_len, max_len = 180, 300
+            else:
+                min_len, max_len = 80, 150
+
+        summary = self.model(
+            input_text,
+            max_length=max_len,
+            min_length=min_len,
+            do_sample=False,
+            num_beams=4  # améliore la qualité du résumé
+        )[0]["summary_text"]
+
+        return summary.strip()
 
         except Exception as e:
             print(f"[Erreur résumé] : {e}")
