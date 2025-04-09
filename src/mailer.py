@@ -3,6 +3,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import List
 import markdown
+import logging
+
+logger = logging.getLogger(__name__)
 
 def send_email_report(
     subject: str,
@@ -25,28 +28,26 @@ def send_email_report(
         smtp_server (str): Serveur SMTP.
         smtp_port (int): Port SMTP.
     """
-    # Conversion Markdown → HTML
-    html_content = markdown.markdown(markdown_content, extensions=["extra", "sane_lists"])
-
-    # Création du message multipart
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = subject
-    msg["From"] = sender_email
-    msg["To"] = ", ".join(recipients)
-
-    # Attachments : version texte brut + HTML
-    part1 = MIMEText(markdown_content, "plain")
-    part2 = MIMEText(html_content, "html")
-
-    msg.attach(part1)
-    msg.attach(part2)
-
-    # Envoi
     try:
+        html_content = markdown.markdown(markdown_content, extensions=["extra", "sane_lists"])
+
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = subject
+        msg["From"] = sender_email
+        msg["To"] = ", ".join(recipients)
+
+        # Ajoute la version texte et HTML
+        msg.attach(MIMEText(markdown_content, "plain"))
+        msg.attach(MIMEText(html_content, "html"))
+
+        logger.info("Connexion au serveur SMTP...")
         with smtplib.SMTP(smtp_server, smtp_port) as server:
             server.starttls()
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, recipients, msg.as_string())
-            print("✅ Rapport envoyé avec succès.")
+        logger.info("✅ Rapport envoyé avec succès.")
+
+    except smtplib.SMTPAuthenticationError:
+        logger.error("❌ Échec de l'authentification SMTP : vérifie ton email/mot de passe ou utilise un mot de passe d'application Gmail.")
     except Exception as e:
-        print(f"❌ Erreur lors de l'envoi : {e}")
+        logger.error(f"❌ Erreur lors de l'envoi de l'email : {e}")
