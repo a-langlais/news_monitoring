@@ -1,6 +1,8 @@
+import logging
 from transformers import pipeline
 from typing import Optional
 
+logger = logging.getLogger(__name__)
 
 class ArticleSummarizer:
     def __init__(self, model_name: str = "facebook/bart-large-cnn", max_input_length: int = 1024):
@@ -16,7 +18,7 @@ class ArticleSummarizer:
 
     def summarize(self, text: str) -> Optional[str]:
         """
-        Résume un article en texte brut.
+        Résume un article en texte brut avec une longueur de résumé adaptée dynamiquement.
 
         Args:
             text (str): Texte à résumer.
@@ -25,15 +27,14 @@ class ArticleSummarizer:
             Optional[str]: Résumé généré, ou None si problème.
         """
         if not text or len(text.strip()) < 100:
+            logger.warning("Texte trop court pour être résumé.")
             return None
 
         try:
-            # Tronquer le texte d'entrée si trop long
             input_text = text.strip()[:self.max_input_length]
-
-            # Déterminer dynamiquement la longueur du résumé selon la taille du texte
             word_count = len(input_text.split())
 
+            # Longueurs de résumé dynamiques
             if word_count > 1500:
                 min_len, max_len = 350, 500
             elif word_count > 1000:
@@ -43,16 +44,17 @@ class ArticleSummarizer:
             else:
                 min_len, max_len = 80, 150
 
-        summary = self.model(
-            input_text,
-            max_length=max_len,
-            min_length=min_len,
-            do_sample=False,
-            num_beams=4  # améliore la qualité du résumé
-        )[0]["summary_text"]
+            summary = self.model(
+                input_text,
+                max_length=max_len,
+                min_length=min_len,
+                do_sample=False,
+                num_beams=4
+            )[0]["summary_text"]
 
-        return summary.strip()
+            logger.info(f"Résumé généré avec succès ({len(summary.split())} mots).")
+            return summary.strip()
 
         except Exception as e:
-            print(f"[Erreur résumé] : {e}")
+            logger.error(f"Erreur lors du résumé de l'article : {e}")
             return None
