@@ -24,7 +24,7 @@ def format_articles_markdown(articles: List[Dict]) -> str:
     ]
 
     for article in articles:
-        title = article.get("title", "Sans titre")
+        title = article.get("title", "Sans titre").replace("\n", " ")
         link = article.get("link", "")
         published = article.get("published")
         published_str = f"{published:%d/%m/%Y}" if published else "Date inconnue"
