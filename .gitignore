@@ -1,6 +1,3 @@
 # .gitignore
 .env
 __pycache__
-
-logs/veille.log
-logs/log.log
