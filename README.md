@@ -7,7 +7,7 @@ Un log est généré à chaque session afin d'avoir un suivi régulier des erreu
 
 - Dans un premier temps, le programme récupère les derniers articles des différents flux RSS saisis dans le fichier `config.py`, avec leur titre, leur URL et leur date de publication grâce au package `feedparser`.
 - Puis, les contenus sont scrapés afin d'obtenir le contenu complet des articles en format HTML grâce aux packages `requests` et `BeautifulSoup`.
-- Les contenus aggrégés sont alors nettoyés puis résumés en parallèle grâce à un modèle de summarization open-source (facebook/bart-large-cnn) disponible via l'[API Hugging-Face](https://huggingface.co/facebook/bart-large-cnn) grâce au package `transformers`. Ce modèle est spécialisé dans la réalisation de court résumés journalistiques et fonctionne très bien pour du contenu en français comme en anglais.
+- Les contenus agrégés sont alors nettoyés puis résumés en parallèle grâce à un modèle de summarization open-source (facebook/bart-large-cnn) disponible via l'[API Hugging-Face](https://huggingface.co/facebook/bart-large-cnn) grâce au package `transformers`. Ce modèle est spécialisé dans la réalisation de courts résumés journalistiques et fonctionne très bien pour du contenu en français comme en anglais.
 - Enfin, les contenus résumés sont formatés de manière standardisée en Markdown avec un output en *.md dans un premier temps, puis un envoi du rapport par mail dans un second temps.
 
 <p align="center">
@@ -25,10 +25,10 @@ RSS_SUMMARIZER/
 ├── reports/
 │   └── rapport_veille_YYYY-MM-DD.md        # Sortie du rapport
 ├── src/
-│   ├── config.py                           # Fichier de configuration (flux RSS et ID)
+│   ├── config.py                           # Fichier de configuration (flux RSS, durée cible et modèle de summarization)
 │   ├── formatter.py                        # Programme de formattage des contenus agrégés
 │   ├── mailer.py                           # Programme d'envoi de mail
-│   ├── main.py                             # Programme principal
+│   ├── main.py                             # Programme d'orchestration principal
 │   ├── rss_fetcher.py                      # Programme de récupération des flux
 │   ├── scraper.py                          # Programme de data scraping
 │   └── summarizer.py                       # Programme de summarization
