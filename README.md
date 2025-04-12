@@ -47,7 +47,9 @@ Dans un premier temps, clonez le dépôt sur votre machine locale via votre mét
 
 Ensuite, vous pouvez créer un environnement virtuel en téléchargeant spécifiquement les dépéndances Python nécessaires via le fichier `requirements.txt`.
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 ### Création du fichier `.env` (indispensable)
 
@@ -70,4 +72,6 @@ SMTP_PORT=
 
 Pour automatiser la veille, vous pouvez configurer un cronjob hebdomadaire, par exemple, **pour un lancement tous les lundi à 6h** :
 
-```0 6 * * 1 /usr/bin/python3 ~/src/main.py```
+```
+0 6 * * 1 /usr/bin/python3 ~/src/main.py
+```
