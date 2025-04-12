@@ -43,7 +43,7 @@ RSS_SUMMARIZER/
 ### Environnement virtuel
 
 Dans un premier temps, clonez le dépôt sur votre machine locale via votre méthode préférée ou en utilisant la commande suivante :
-``` git clone https://github.com/a-langlais/rss-summarizer.git ```
+``` git clone https://github.com/a-langlais/rss_summarizer.git ```
 
 Ensuite, vous pouvez créer un environnement virtuel en téléchargeant spécifiquement les dépéndances Python nécessaires via le fichier `requirements.txt`.
 
