@@ -65,3 +65,9 @@ EMAIL_RECIPIENTS=
 SMTP_SERVER=
 SMTP_PORT=
 ```
+
+### Automatisation de la veille (facultatif)
+
+Pour automatiser la veille, vous pouvez configurer un cronjob hebdomadaire, par exemple, **pour un lancement tous les lundi à 6h** :
+
+```0 6 * * 1 /usr/bin/python3 ~/src/main.py```
