@@ -20,6 +20,7 @@ RSS_FEEDS = [
     "theverge.com/rss/index.xml",           # The Verge
     "http://www.kdnuggets.com/feed"         # KDnuggets
     "https://techcrunch.com/feed/",         # TechCrunch
+    "https://www.cnil.fr/fr/rss.xml",       # CNIL
 ]
 
 ### --- Autres paramètres --- ###
