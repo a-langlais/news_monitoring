@@ -1,0 +1,48 @@
+2025-04-12 12:38:57,170 — INFO — === DÉBUT DU SCRIPT ===
+2025-04-12 12:38:57,174 — INFO — Récupération des articles depuis le 05/04/2025...
+2025-04-12 12:39:02,618 — INFO — 28 articles récupérés depuis les flux RSS.
+2025-04-12 12:39:03,985 — WARNING — From C:\Users\langl\anaconda3\envs\news_monitoring\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-04-12 12:39:04,289 — WARNING — From C:\Users\langl\anaconda3\envs\news_monitoring\Lib\site-packages\tf_keras\src\backend.py:873: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2025-04-12 12:39:08,550 — INFO — Traitement article : New Learning Pathway for Data Architects: Upskill on Data Platforms, AI and Governance
+2025-04-12 12:39:31,581 — INFO — Traitement article : The Power of Fine-Tuning on Your Data: Quick Fixing Bugs with LLMs via Never Ending Learning (NEL)
+2025-04-12 12:39:55,224 — INFO — Traitement article : Databricks Wins 2025 Google Cloud Partner of the Year Award
+2025-04-12 12:40:16,875 — INFO — Traitement article : Databricks Bengaluru: Scaling Innovation and Building the Future of Data & AI
+2025-04-12 12:40:38,788 — INFO — Traitement article : Announcing the APJ Databricks Smart Business Insights Challenge: Empowering Data-Driven Decision Making with AI and BI
+2025-04-12 12:41:00,016 — INFO — Traitement article : Introducing Meta’s Llama 4 on the Databricks Data Intelligence Platform
+2025-04-12 12:41:26,990 — INFO — Traitement article : Hugging Face and Cloudflare Partner to Make Real-Time Speech and Video Seamless with FastRTC
+2025-04-12 12:41:55,110 — INFO — Traitement article : Arabic Leaderboards: Introducing Arabic Instruction Following, Updating AraGen, and More
+2025-04-12 12:42:18,169 — INFO — Traitement article : Geo4D: Leveraging Video Generators for Geometric 4D Scene Reconstruction
+2025-04-12 12:42:40,631 — INFO — Traitement article : TAPNext: Tracking Any Point (TAP) as Next Token Prediction
+2025-04-12 12:43:08,186 — INFO — Traitement article : Scaling Laws for Native Multimodal Models Scaling Laws for Native
+  Multimodal Models
+2025-04-12 12:43:37,342 — INFO — Traitement article : Compass Control: Multi Object Orientation Control for Text-to-Image
+  Generation
+2025-04-12 12:43:58,320 — INFO — Traitement article : MonoPlace3D: Learning 3D-Aware Object Placement for 3D Monocular
+  Detection
+2025-04-12 12:44:20,815 — INFO — Traitement article : Kimi-VL Technical Report
+2025-04-12 12:44:43,714 — INFO — Traitement article : Towards Visual Text Grounding of Multimodal Large Language Model
+2025-04-12 12:45:08,644 — INFO — Traitement article : MM-IFEngine: Towards Multimodal Instruction Following
+2025-04-12 12:45:31,958 — INFO — Traitement article : C3PO: Critical-Layer, Core-Expert, Collaborative Pathway Optimization
+  for Test-Time Expert Re-Mixing
+2025-04-12 12:45:57,620 — INFO — Traitement article : DeepSeek-R1 Thoughtology: Let's  about LLM Reasoning
+2025-04-12 12:46:20,030 — INFO — Traitement article : SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual
+  Reasoning Self-Improvement
+2025-04-12 12:46:43,175 — INFO — Traitement article : VisualCloze: A Universal Image Generation Framework via Visual
+  In-Context Learning
+2025-04-12 12:47:05,964 — INFO — Traitement article : MOSAIC: Modeling Social AI for Content Dissemination and Regulation in
+  Multi-Agent Simulations
+2025-04-12 12:47:33,990 — INFO — Traitement article : VCR-Bench: A Comprehensive Evaluation Framework for Video
+  Chain-of-Thought Reasoning
+2025-04-12 12:47:56,361 — INFO — Traitement article : HoloPart: Generative 3D Part Amodal Segmentation
+2025-04-12 12:48:24,130 — INFO — Traitement article : Intelligence artificielle et services publics : la CNIL publie le bilan de son « bac à sable »
+2025-04-12 12:48:59,524 — INFO — Traitement article : Ordre du jour de la séance plénière du 10 avril 2025
+2025-04-12 12:48:59,682 — WARNING — Article vide ou inaccessible : https://www.cnil.fr/fr/ordre-du-jour-de-la-seance-pleniere-du-10-avril-2025
+2025-04-12 12:48:59,682 — INFO — Traitement article : Lancement d’une concertation sur les outils d’enregistrement et de relecture de session de navigation
+2025-04-12 12:49:28,172 — INFO — Traitement article : Applications mobiles : la CNIL publie une version modifiée de ses recommandations pour mieux protéger la vie privée
+2025-04-12 12:49:54,713 — INFO — Traitement article : Demandes d’autorisation en santé : bilan pour l’année 2024 de l’action de la CNIL
+2025-04-12 12:50:22,338 — INFO — 27 articles résumés avec succès.
+2025-04-12 12:50:22,338 — INFO — Rapport sauvegardé dans C:\Users\langl\Documents\GitHub\news_monitoring\reports\rapport_veille_2025-04-12.md
+2025-04-12 12:50:22,999 — INFO — Email envoyé à ['langlais.alexandre03@gmail.com']
+2025-04-12 12:50:22,999 — INFO — === FIN DU SCRIPT ===
