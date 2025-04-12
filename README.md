@@ -10,7 +10,7 @@ Un log est généré à chaque session afin d'avoir un suivi régulier des erreu
 - Les contenus aggrégés sont alors nettoyés puis résumés en parallèle grâce à un modèle de summarization open-source (facebook/bart-large-cnn) disponible via l'[API Hugging-Face](https://huggingface.co/facebook/bart-large-cnn) grâce au package `transformers`. Ce modèle est spécialisé dans la réalisation de court résumés journalistiques et fonctionne très bien pour du contenu en français comme en anglais.
 - Enfin, les contenus résumés sont formatés de manière standardisée en Markdown avec un output en *.md dans un premier temps, puis un envoi du rapport par mail dans un second temps.
 
-![Exemple d'une sortie du programme](/images/report_screenshot.png)
+<img src="/images/report_screenshot.png" alt="Exemple d'une sortie du programme" width="60%" />
 
 ## Organisation du répértoire
 
