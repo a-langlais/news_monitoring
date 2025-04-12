@@ -44,3 +44,20 @@ Dans un premier temps, clonez le dépôt sur votre machine locale via votre mét
 Ensuite, vous pouvez créer un environnement virtuel en téléchargeant spécifiquement les dépéndances Python nécessaires via le fichier `requirements.txt`.
 
 ```pip install -r requirements.txt```
+
+### Création du fichier `.env` (indispensable)
+
+Dans le dossier `src`, créez votre fichier `.env` avec ce contenu, complété par vos soins :
+
+```
+# Adresse email et mot de passe (idéalement un token applicatif)
+EMAIL_USER=
+EMAIL_PASS=
+
+# Destinataires (séparés par des virgules si plusieurs)
+EMAIL_RECIPIENTS=
+
+# Paramètres SMTP
+SMTP_SERVER=
+SMTP_PORT=
+```
