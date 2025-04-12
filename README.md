@@ -32,7 +32,6 @@ RSS_SUMMARIZER/
 │   ├── rss_fetcher.py                      # Programme de récupération des flux
 │   ├── scraper.py                          # Programme de data scraping
 │   └── summarizer.py                       # Programme de summarization
-├── .env                                    # Fichier environnement (variables sensibles, tokens, config SMTP)
 ├── .gitignore                              # Fichier .gitignore
 ├── README.md                               # Lisez-moi
 └── requirements.txt                        # Liste des packages nécessaires pour le projet
