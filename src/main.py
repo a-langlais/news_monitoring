@@ -10,6 +10,9 @@ import time
 import logging
 from pathlib import Path
 
+# Création de la variable de mesure du temps de traitement
+vartime = datetime.now()
+
 # Création des dossiers logs et reports
 Path("logs").mkdir(exist_ok=True)
 Path("reports").mkdir(exist_ok=True)
@@ -108,6 +111,11 @@ def main():
         logger.error(f"Erreur lors de l'envoi de l'email : {e}")
         return
 
+    # Calcul du temps de traitement
+    vartime = datetime.now() - vartime
+    vartime = vartime.total_seconds() / 60
+
+    logger.info(f"⏱️ Traitement réalisé en {vartime} minutes...")
     logger.info("=== FIN DU SCRIPT ===\n")
 
 
