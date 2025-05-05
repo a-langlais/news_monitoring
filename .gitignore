@@ -1,3 +1,4 @@
 # .gitignore
 .env
+logs/log.log
 __pycache__
