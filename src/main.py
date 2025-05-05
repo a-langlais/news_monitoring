@@ -112,8 +112,7 @@ def main():
         return
 
     # Calcul du temps de traitement
-    vartime = datetime.now() - vartime
-    vartime = vartime.total_seconds() / 60
+    vartime = (datetime.now() - vartime).total_seconds() / 60
 
     logger.info(f"⏱️ Traitement réalisé en {vartime} minutes...")
     logger.info("=== FIN DU SCRIPT ===\n")
